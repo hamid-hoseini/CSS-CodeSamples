@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+    <style>
+
+        ol{
+            list-style: none;
+            counter-reset: li; /* reset counter for ol (li is just arbitrary identifier) */
+        }
+
+        ol li{
+            position:relative;
+            margin-bottom: 10px; /* bottom spacing between lis */
+            padding: 4px 10px;
+        }
+
+        ol ol{
+            margin-top: 1em; /* for nested ols, add top and bottom spacing */
+            margin-bottom: -10px;
+        }
+
+        ol > li:before{ /* pseudo element for custom counter */
+            content:counter(li); /* set its content to CSS generated counter, using the "li" counter defined above */
+            counter-increment:li; /* increment the li counter each time, assumed starting index is 0 */
+            text-align: center;
+            display:block;
+            position:absolute;
+            width: 27px; /* width of counter */
+            height: 27px; /* height of counter */
+            line-height: 27px; /* set this to same as height value */
+            font-weight: bold;
+            top: 0;
+            left: -30px; /* shift counter to the left */
+            background: #452b06; /* background of counter */
+            color: white;
+            z-index: -1;
+            -moz-box-shadow: 2px 2px 4px gray; /* CSS3 shadows */
+            -webkit-shadow: 2px 2px 4px gray;
+            box-shadow: 2px 2px 4px gray;
+        }
+
+        ol ol > li:before{ /* 2nd level custom counter specific style */
+            background: darkred;
+            border-radius: 8px;
+        }
+
+        ol ol ol > li:before{ /* 3rd level custom counter specific style */
+            background: red;
+            border-radius: 27px;
+        }
+
+    </style>
+
+</head>
+<body>
+<ol>
+    <li>this is a list 1</li>
+    <li>this is a list 1
+        <ol>
+            <li>this is a list 2</li>
+            <li>this is a list 2
+                <ol>
+                    <li>this is a list 3</li>
+                    <li>this is a list 3</li>
+                    <li>this is a list 3</li>
+                    <li>this is a list 3</li>
+                </ol>
+            </li>
+            <li>this is a list 2</li>
+            <li>this is a list 2</li>
+        </ol>
+    </li>
+    <li>this is a list 1</li>
+    <li>this is a list 1</li>
+    <li>this is a list 1</li>
+</ol>
+
+</body>
+</html>

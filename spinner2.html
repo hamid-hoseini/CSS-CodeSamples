@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<style>
+    html {
+        background: #000;
+    }
+
+    .loader {
+        position: relative;
+        width: 180px;
+        margin: 100px auto 0;
+        font-size: 13px;
+    }
+    .loader span {
+        border-radius: 50%;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background: #11A8FF;
+        margin: 0 15px 0 0;
+        border-radius: 50%;
+        transform: scale(0.4);
+        animation: tilt 2s linear infinite;
+    }
+    .loader span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .loader span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    .loader span:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+    .loader span:nth-child(5) {
+        animation-delay: 0.8s;
+    }
+
+    @keyframes tilt {
+        0% {
+            transform: scale(0.4) rotate(0deg);
+        }
+        50% {
+            transform: scale(1.3) rotate(225deg);
+            background: #BC11FF;
+            box-shadow: 0 0 2px #D467FF;
+        }
+        95%,100% {
+            transform: scale(0.4) rotate(360deg);
+            background: #11A8FF;
+            box-shadow: none;
+        }
+    }
+</style>
+<body>
+<div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>
