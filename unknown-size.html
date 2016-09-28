@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>unknown-size</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            float: left;
+            overflow: hidden;
+            margin: 1px;
+            position: relative;
+        }
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        //displaying image of unknown size inside div of fixed size
+        onload = function(){
+            for (var i = 0; i < document.images.length; i++) {
+                centerImage(document.images[i]);
+            }
+        };
+
+        function centerImage(img) {
+            var container = img.parentNode;
+            img.style.top = ((container.offsetHeight - img.offsetHeight) / 2) + "px";
+            img.style.left = ((container.offsetWidth - img.offsetWidth) / 2) + "px";
+        }
+
+    </script>
+</head>
+<body>
+    <div><img src="http://placehold.it/100x80" /></div>
+    <div><img src="http://placehold.it/80x80" /></div>
+    <div><img src="http://placehold.it/80x100" /></div>
+    <div><img src="http://placehold.it/80x60" /></div>
+    <div><img src="http://placehold.it/60x80" /></div>
+    <div><img src="http://placehold.it/150x150" /></div>
+    <div><img src="http://placehold.it/180x120" /></div>
+    <div><img src="http://placehold.it/120x180" /></div>
+    <div><img src="http://placehold.it/20x30" /></div>
+</body>
+</html>
